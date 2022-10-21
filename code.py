@@ -9,10 +9,11 @@ User_name = input(' Please enter your name:')
 
 for i in range(11):
     if score==5:
+        print('Congratulations you have Guessed Correcly 5 times in a row!')
         break
     print(f'Level: {level}')
     random_num = random.randint(0,100)
-    print(f"Your first number is {random_num}")
+    print(f"Your number is {random_num}")
     user_guess= input(f'{User_name} please enter your guess (higher/lower): ')
     random_num2 =random.randint(0,100)
     if random_num2>random_num and user_guess =='higher':
@@ -20,12 +21,24 @@ for i in range(11):
         score+=1
         print(f'Your score is: {score}')
         level+=1
+        score<5
+        next_level=input('Would you like to move onto the next level? y/n')
+        if next_level == 'n':
+                print(f'Score = {score} ')
+                print('Thank you for playing')
+                break
+      
 
     elif random_num2<random_num and user_guess =='lower':
         print('Well done! You have guessed correctly!')
         score+=1
         print(f'Your score is: {score}')
         level+=1
+        next_level=input('Would you like to move onto the next level? y/n')
+        if next_level == 'n':
+            print(f'Score = {score} ')
+            print('Thank you for playing')
+            break
     
 
     else:
@@ -37,6 +50,7 @@ for i in range(11):
             break
         else:
             level =1
+            score =0
    
             
 
